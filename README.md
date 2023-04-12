@@ -7,6 +7,7 @@
 
 * `cd git_dir`
 * `python3 -m venv venv`
+* `source venv\bin\activate`
 * `pip install -r requirements.txt`
 * `cd test_site`
 * `python3 manage.py runserver`
