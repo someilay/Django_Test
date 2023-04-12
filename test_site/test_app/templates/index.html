@@ -1,0 +1,9 @@
+{% if menus %}
+    <ul>
+    {% for menu in menus %}
+        <li><a href="/menu/{{ menu.id }}">{{ menu.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No menus are available.</p>
+{% endif %}

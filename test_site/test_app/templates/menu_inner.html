@@ -1,0 +1,23 @@
+{% load menu_tags %}
+
+{% for entry in entries %}
+    <li>
+        {% if tree|get_item:entry.id %}
+            {% if chosen_id == entry.id %}
+                {# Indicate chosen entry#}
+                <a href="/menu/{{ menu_id }}/{{ entry.id }}"> -> {{entry.name}}</a>
+            {% else %}
+                <a href="/menu/{{ menu_id }}/{{ entry.id }}">{{entry.name}}</a>
+            {% endif %}
+        {% else %}
+            <a>{{entry.name}}</a>
+        {% endif %}
+
+        {# Draw sub entries, it's guaranteed that they have a greater ids#}
+        {% if tree|get_item:entry.id and chosen_id >= entry.id %}
+            <ul>
+                {% include "menu_inner.html" with entries=tree|get_item:entry.id tree=tree %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
