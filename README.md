@@ -14,3 +14,4 @@
 ## Prerequisites
 
 * `test_site\example_db` - database with menu examples, one linux structure like, another - light weighted
+* Admin account: admin; Password: admin
